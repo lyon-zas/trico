@@ -11,9 +11,10 @@ const routes: Routes = [
   { path: 'adminDashboard', component: UtilitiesComponent },
   { path: 'editProfile', component: EditProfileComponent },
   { path: 'viewProfile', component: ViewProfileComponent },
-  { path: 'pageNotFound', component: Error404Component },
   { path: 'dashboard', component: SelectorComponent },
-  {path: 'passwordReset', component: PasswordResetComponent}
+  {path: 'passwordReset', component: PasswordResetComponent},
+  { path: 'pageNotFound', component: Error404Component },
+  {path:'**', redirectTo: 'pageNotFound'}
 ];
 
 @NgModule({

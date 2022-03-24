@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { ChatsFileUploadComponent } from '../../materialPopUp/chats-file-upload/chats-file-upload.component';
-import { NewUser } from '../../addNewUserClass/new-user';
 import { HttpAPIsService } from 'src/app/RestAPI/http-apis.service';
+import { User } from 'src/app/userClass/user';
+import { MatDialog } from '@angular/material/dialog';
+import { FormPopUpComponent } from '../../popUp/form-pop-up/form-pop-up.component';
+
 
 @Component({
   selector: 'app-manage-users',
@@ -13,26 +14,75 @@ import { HttpAPIsService } from 'src/app/RestAPI/http-apis.service';
 })
 export class ManageUsersComponent implements OnInit {
 
-  newUsers :NewUser[] = [];
-  constructor(private dialog: MatDialog, private service: HttpAPIsService) { }
 
-  openDialogPopUp(){
-    let dialogRef = this.dialog.open(ChatsFileUploadComponent,{
-      height:'94.5%',
-      width: '50%'
-    });
-    dialogRef.afterClosed().subscribe((result: any)=>{
-      console.log(`Dialog result: ${result}`);
-    })
+  users: User[] = [];
+  p:number = 1;
+  filterString: string = '';
+  isPopUpOpened: Boolean = true;
+  imageDirectoryPath: any = 'http://localhost:8090/api';
+  constructor(
+    private service: HttpAPIsService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private dialog: MatDialog
+    ) { }
+
+
+    popUpDialog(){
+      this.isPopUpOpened = true;
+      const dialogRef = this.dialog.open(FormPopUpComponent,{
+        data: {}
+      })
+      dialogRef.afterClosed().subscribe((result: any) =>{
+        this.isPopUpOpened = false;
+        console.log("Page opened", result);
+      })
+    }
+
+    viewUsersProfile(user:User){
+      this.service.setUserArray(user);
+      console.log("userProfile>>", user);
+      this.router.navigate(['/pages/pages'],{relativeTo:this.route});
+    }
+
+
+  routeToViewList(){
+    this.router.navigate(['/pages/viewList'],{relativeTo: this.route});
   }
 
-  // getUsers(){
-  //   this.newUsers = this.service.getNewUsers();
-  // }
+
+
+   getUsers(){
+  this.service.getUsersArray().subscribe(tricomms =>{
+    this.users = tricomms;
+    console.log("New Table Arrays>>", this.users);
+  })
+   }
+
+   editUser(user:User){
+     this.service.setUserArray(user);
+     this.service.setIsEdit(true);
+     this.isPopUpOpened = true;
+     const dialogRef = this.dialog.open(FormPopUpComponent,{
+       data: user
+     })
+     dialogRef.afterClosed().subscribe((elem:any)=>{
+       this.isPopUpOpened = false;
+       console.log("Edited Arrays>>", elem);
+     })
+    //  this.router.navigate(['/pages/createUser'],{relativeTo:this.route});
+   }
+
+   deleteUser(user: User){
+     this.service.apiDeleteUserArray(user.userId).subscribe((data:any)=>{
+       console.log('deleted row>>',user.userId, "deleted row's current value>>", data, "current table>>",this.users);
+       this.ngOnInit();
+     })
+   }
 
   ngOnInit(): void {
-    // this.getUsers();
-    this.newUsers = this.service.getNewUsers();
+    this.getUsers();
+    this.viewUsersProfile;
   }
 
 }

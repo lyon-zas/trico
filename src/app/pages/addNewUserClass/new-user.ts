@@ -10,6 +10,7 @@ export class NewUser {
   password: string | any;
   confirmPassword: string | any;
   profilePicture: any;
+  todayDate: Date | any
 
   constructor(
     userId: number,
@@ -21,7 +22,8 @@ export class NewUser {
     userRole: string,
     password: string | any,
     confirmPassword: string | any,
-    profilePicture: any
+    profilePicture: any,
+    todayDate: Date | any
   ){
     this.userId = userId;
     this.userName = userName;
@@ -33,5 +35,6 @@ export class NewUser {
     this.password = password;
     this.confirmPassword = confirmPassword;
     this.profilePicture = profilePicture;
+    this.todayDate = todayDate;
   }
 }

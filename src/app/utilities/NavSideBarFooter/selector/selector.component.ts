@@ -4,6 +4,8 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { LoginAuthService } from 'src/app/AuthToken/login-auth.service';
+import { User } from 'src/app/userClass/user';
+import { HttpAPIsService } from 'src/app/RestAPI/http-apis.service';
 
 @Component({
   selector: 'app-selector',
@@ -16,8 +18,10 @@ export class SelectorComponent implements OnInit, AfterViewInit {
   sidenav! : MatSidenav;
 
   userMail: string | any = '';
+  users: User[] = [];
 
-  constructor(private observer: BreakpointObserver, private router: Router, private route: ActivatedRoute, private auth: LoginAuthService) { }
+
+  constructor(private observer: BreakpointObserver, private router: Router, private route: ActivatedRoute, private auth: LoginAuthService, private service: HttpAPIsService) { }
 
   ngOnInit(): void {
     this.getUserName()
@@ -27,6 +31,8 @@ export class SelectorComponent implements OnInit, AfterViewInit {
     this.userMail = localStorage.getItem('userMail');
     return this.userMail = this.userMail;
   }
+
+
 
   viewProfilePage(){
     this.router.navigate(['/utilities/viewProfile'], {relativeTo: this.route})

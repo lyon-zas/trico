@@ -1,0 +1,135 @@
+#card {
+    margin-left: 213px;
+    position: relative;
+    margin-top: -580px;
+    height: 539px;
+    width: 1140px;
+    color: black;
+}
+
+h2 {
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-indent: 10px;
+    color: #ccae2c;
+}
+
+#newUser {
+    color: #293986;
+    background-color: white;
+    font-size: small;
+}
+
+#newUser:hover {
+    color: white;
+    background-color: #293986;
+}
+
+#icons {
+    cursor: pointer;
+}
+
+.form-group {
+    width: 400px;
+}
+
+.form-control {
+    font-size: small;
+}
+
+.main-content {
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+#head {
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #293986;
+    color: white;
+    font-size: medium;
+}
+
+#hidden {
+    visibility: hidden;
+}
+
+.pagination {
+    position: static;
+    margin-top: 10px;
+    margin-left: -50px;
+    display: inline-block;
+}
+
+//////////////////////////////////////////////////////button tops
+.materials {
+    margin-left: 100px;
+}
+
+#x1 {
+    margin-top: -35px;
+    margin-left: 150px;
+}
+
+.text-value {
+    text-indent: -70px;
+}
+
+#type {
+    text-indent: -70px;
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#type1 {
+    text-indent: -93px;
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#word {
+    text-indent: -175px;
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#word1 {
+    text-indent: -193px;
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+button.a {
+    background-color: white;
+    height: 75px;
+    width: 222px;
+    margin-left: -100px;
+    border-radius: 7px;
+    cursor: pointer;
+    border-style: none;
+    box-shadow: 10px 5px 5px #E5E5E5;
+}
+
+button.a:hover {
+    background-color: #293986;
+    padding-right: 10px;
+    border-color: #ccae2c;
+    color: white;
+    cursor: pointer;
+}
+
+#activated {
+    color: rgb(16, 212, 16);
+}
+
+#activated:hover {
+    color: white;
+}
+
+#deactivated {
+    color: black;
+}
+
+#deactivated:hover {
+    color: white;
+}

@@ -25,7 +25,7 @@ export class AdminLoginComponent implements OnInit {
   submit(){
     if(this.adminLoginForm.valid){
       this.adminAuth.adminLogIn(this.adminLoginForm.value).subscribe((elem)=>{
-        this.router.navigate(['/utilities/adminDashboard'], {relativeTo: this.route}), elem;
+        this.router.navigate(['/pages/viewList'], {relativeTo: this.route}), elem;
         console.log('succesful adamin Login>>');
       },
       (err:Error)=>{
@@ -47,6 +47,10 @@ export class AdminLoginComponent implements OnInit {
   }
   }
   ngOnInit(): void {
+  }
+
+  routeToLoginPage(){
+    this.router.navigate(['/LoginPage/loginAuthentication'],{relativeTo: this.route});
   }
 
 }

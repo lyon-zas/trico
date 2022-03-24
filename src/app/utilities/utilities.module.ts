@@ -14,6 +14,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {LayoutModule} from '@angular/cdk/layout';
 import { PasswordResetComponent } from './forgotPasswords/password-reset/password-reset.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
+
 
 const materialModules = [
   MatToolbarModule,
@@ -40,7 +43,8 @@ const cdkLayout = [
     UtilitiesRoutingModule,
     materialModules,
     cdkLayout,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     materialModules,

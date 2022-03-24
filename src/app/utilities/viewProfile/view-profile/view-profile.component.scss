@@ -1,0 +1,51 @@
+#card {
+    margin-left: 203px;
+    position: relative;
+    margin-top: -550px;
+    height: 500px;
+    width: 1150px;
+}
+
+li {
+    list-style: none;
+}
+
+#btn {
+    margin-left: 890px;
+}
+
+.btn {
+    background-color: #293986;
+    color: white;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #293986;
+    cursor: pointer;
+}
+
+#up {
+    font-size: large;
+}
+
+#user {
+    height: 100px;
+    width: 100px;
+}
+
+.grid {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-indent: 10px;
+    color: #ccae2c;
+}
+
+.main-content {
+    margin-top: 10px;
+    margin-left: 25px;
+}

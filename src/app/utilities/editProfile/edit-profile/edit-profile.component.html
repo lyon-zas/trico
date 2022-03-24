@@ -1,3 +1,82 @@
-<div class="selector">
-    <app-selector></app-selector>
+<div class="body">
+    <div class="selector">
+        <app-selector></app-selector>
+    </div>
+    <div class="card" id="card">
+        <div class="card-header">
+            <h2>Channels</h2>
+        </div>
+        <div class="main-content">
+            <div class="form">
+                <form action="Add New User" autocomplete="off" [formGroup]="newUserForm" (ngSubmit)="submit()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="username" class="sr-only">Username</label>
+                                <input type="text" class="form-control" id="userName" placeholder="Input User Name" formControlName="userName">
+                            </div><br>
+                        </div>
+                        <div class="col">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="webMail" class="sr-only">Email</label>
+                                <input type="text" class="form-control" id="webMail" placeholder="Input Email" formControlName="webMail">
+                            </div><br>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="firstName" class="sr-only">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Input first Name" formControlName="firstName">
+                            </div><br>
+                        </div>
+                        <div class="col">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="lastName" class="sr-only">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Input last name" formControlName="lastName">
+                            </div><br>
+                        </div>
+                        <div class="w-100"></div>
+
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="inputPassword2" class="sr-only">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+                            </div><br>
+                        </div>
+                        <div class="col">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="Confirmpassword" class="sr-only">Confirm Password</label>
+                                <input type="password" class="form-control" id="Confirmpassword" placeholder="confirm Password" formControlName="confirmPassword">
+                            </div><br>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <div class="form-group mx-sm-3 mb-2" id="fileUpload">
+                                <label for="exampleFormControlFile1" class="sr-only"><small id="small">Upload profile Picture JPEG,PNG...</small></label>
+                                <input type="file" class="form-control" id="exampleFormControlFile1" formControlName="profilePicture">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group mx-sm-3 mb-2" id="fileUpload">
+                                <label for="todayDate" class="sr-only">Input Today's date</label>
+                                <input type="date" class="form-control" id="todayDate" formControlName="todayDate">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card-footer text-muted" id="footer">
+            <div class="form-group mx-sm-3 mb-2">
+            </div>
+            <div class="row" id="footerbtn">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary" id="newUser" (click)="submit()">
+        Submit
+    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -22,7 +22,14 @@
                     <div class="form-group">
                         <br>
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-light" [disabled]="!adminLoginForm.valid" (submit)="submit()">Login</button>
+                            <div class="row" id="rowlet">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-light" [disabled]="!adminLoginForm.valid" (submit)="submit()">Login</button>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-light" (click)="routeToLoginPage()">To User Login</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form><br>

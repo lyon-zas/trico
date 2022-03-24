@@ -25,7 +25,7 @@ export class LoginPageComponent implements OnInit {
   submit($event: any): void{
     if(this.loginForm.valid){
       this.auth.login(this.loginForm.value).subscribe((result) =>{
-        this.router.navigate(['/utilities/dashboard'], {relativeTo: this.route}), result;
+        this.router.navigate(['/pages/chats'], {relativeTo: this.route}), result;
         localStorage.setItem('userMail', this.loginForm.value.userMail);
         console.log("Successful Login Attempt>>", $event);
       },

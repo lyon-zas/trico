@@ -1,0 +1,147 @@
+<div class="body">
+    <div class="selector">
+        <app-utilities></app-utilities>
+    </div>
+    <div class="card" id="card">
+        <div class="card-header">
+            <h2>Platform Users</h2>
+            <span>
+            <button class="btn btn-primary" id="newUser" (click)="routeToManageRole()">Back</button>&nbsp;
+          </span>
+        </div>
+        <div class="main-content">
+            <div class="materials">
+                <div class="row">
+                    <div class="col">
+                        <div class="col-sm-6 col-lg-3">
+                            <button class="a">
+              <div class="card-body pb-0">
+                <div class="text-value">
+                  <p id="type">Activated Status</p>
+                </div>
+                <div id="x1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="19" fill="currentColor" class="bi bi-lightbulb-fill" viewBox="0 0 16 16" id="activated">
+                    <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+
+                </div>
+
+                <div id="word">{{activatedStatus}}</div>
+              </div>
+            </button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-sm-6 col-lg-3">
+                            <button class="a">
+                  <div class="card-body pb-0">
+                    <div class="text-value">
+                      <p id="type">Deactivated Status</p>
+                    </div>
+                    <div id="x1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="19" fill="currentColor" class="bi bi-lightbulb-off" viewBox="0 0 16 16" id="deactivated">
+                        <path fill-rule="evenodd" d="M2.23 4.35A6.004 6.004 0 0 0 2 6c0 1.691.7 3.22 1.826 4.31.203.196.359.4.453.619l.762 1.769A.5.5 0 0 0 5.5 13a.5.5 0 0 0 0 1 .5.5 0 0 0 0 1l.224.447a1 1 0 0 0 .894.553h2.764a1 1 0 0 0 .894-.553L10.5 15a.5.5 0 0 0 0-1 .5.5 0 0 0 0-1 .5.5 0 0 0 .288-.091L9.878 12H5.83l-.632-1.467a2.954 2.954 0 0 0-.676-.941 4.984 4.984 0 0 1-1.455-4.405l-.837-.836zm1.588-2.653.708.707a5 5 0 0 1 7.07 7.07l.707.707a6 6 0 0 0-8.484-8.484zm-2.172-.051a.5.5 0 0 1 .708 0l12 12a.5.5 0 0 1-.708.708l-12-12a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                    </div>
+
+                    <div id="word1">{{deactivatedStatus}}</div>
+                  </div>
+                </button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-sm-6 col-lg-3">
+                            <button class="a">
+                  <div class="card-body pb-0">
+                    <div class="text-value">
+                      <p id="type1">Total Admins</p>
+                    </div>
+                    <div id="x1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="21" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16" id="activated">
+                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                      </svg>
+                    </div>
+
+                    <div id="word">{{totalAdmins}}</div>
+                  </div>
+                </button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-sm-6 col-lg-3">
+                            <button class="a">
+                  <div class="card-body pb-0">
+                    <div class="text-value">
+                      <p id="type">Total Candidates</p>
+                    </div>
+                    <div id="x1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="21" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16" id="activated">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83
+                                1.418-.832 1.664h10z"/>
+                        <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                      </svg>
+                    </div>
+
+                    <div id="word">{{totalCandidates}}</div>
+                  </div>
+                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="User Search..." name="filterString" [(ngModel)]="filterString">
+            </div><br>
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col" id="head">Id</th>
+                        <th scope="col" id="head">Full Name </th>
+                        <th scope="col" id="head">Email</th>
+                        <th scope="col" id="head">Username</th>
+                        <th scope="col" id="head">Join Date</th>
+                        <th scope="col" id="head">Role</th>
+                        <th scope="col" id="head">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users | filter: filterString | paginate: { itemsPerPage: 5, currentPage: p }; let i=index">
+                        <td scope="row">{{user.userId}}</td>
+                        <td>
+                            <span> {{user.firstName}} {{user.lastName}}</span>
+                        </td>
+                        <td>{{user.webMail}}</td>
+                        <td>{{user.userName}}</td>
+                        <td>{{user.todayDate}}</td>
+                        <td>{{user.userRole}}</td>
+                        <td>{{user.accountStatus}}</td>
+                        <td id="icons">
+                            <div class="row">
+                                <div class="col">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16" (click)="editUser(user)">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                          </svg>
+                                </div>
+                                <div class="col">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" (click)="deleteUser(user)">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882
+                                    4H4.118zM2.5 3V2h11v1h-11z"/>
+                          </svg>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+
+        <div class="pagination">
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+        </div>
+    </div>
+</div>

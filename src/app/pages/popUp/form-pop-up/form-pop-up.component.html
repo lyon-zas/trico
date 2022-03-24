@@ -1,0 +1,116 @@
+<mat-card-header>
+    <mat-toolbar class="toolbar">
+        <mat-card-title>Contact Information</mat-card-title>
+        <span class="toolbar-spacer"></span>
+    </mat-toolbar>
+</mat-card-header><br>
+<mat-card-content>
+    <form autocomplete="off" [formGroup]="newUserForm" (ngSubmit)="submit()">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="username">Username</label><br><br>
+                        <input type="text" class="form-control" id="userName" placeholder="Input User Name" formControlName="userName">
+                    </div><br>
+                </div>
+                <div class="col">
+                    <div class="row" id="imageRow">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="webMail">Email</label><br><br>
+                                <input type="email" class="form-control" id="webMail" placeholder="Input Email" formControlName="webMail">
+                            </div>
+                        </div>
+                        <div class="col" id="moveImage">
+                            <div id="imageMove"><img [src]="url" *ngIf="url" id="imageShow"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label><br><br>
+                        <input type="text" class="form-control" id="firstName" placeholder="Input first Name" formControlName="firstName">
+                    </div><br>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label><br><br>
+                        <input type="text" class="form-control" id="lastName" placeholder="Input last name" formControlName="lastName">
+                    </div><br>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="accountStatus">Account status</label><br><br>
+                        <select id="accountStatus" formControlName="accountStatus">
+                      <option value="" >- -</option>
+                      <option value="activate">Activated</option>
+                      <option value="deactivate">Deactivated</option>
+                    </select>
+                    </div><br>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="userRole">User's Role</label><br><br>
+                        <select id="userRole" formControlName="userRole">
+                  <option value="" >- -</option>
+                  <option value="Admin">Admin</option>
+                  <option value="Candidate">Candidate</option>
+                </select>
+                    </div><br>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="password">Password</label><br>
+                        <input type="password" class="form-control" id="password" placeholder="Input password" formControlName="password">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="Confirmpassword">Confirm Password</label><br>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" formControlName="confirmPassword">
+                    </div>
+                </div>
+                <div class="w-100"></div><br>
+                <div class="col">
+                    <div class="form-group" id="fileUpload">
+                        <div [innerHtml]="msg" *ngIf="msg" style="color: red;"></div>
+                        <small id="small">Upload profile Picture JPEG,PNG</small>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" formControlName="profilePicture" (change)="selectFile($event)">
+                    </div>
+
+                </div>
+                <div class="col" id="todaysDate">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="todayDate" class="sr-only">Input Today's date</label>
+                        <input type="date" class="form-control" id="todayDate" formControlName="todayDate">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+</mat-card-content><br>
+<div class="card-footer text-muted">
+    <mat-dialog-actions>
+        <div class="buttons">
+            <span>
+        <button class="btn btn-primary" id="newUser">
+          keep
+      </button>&nbsp;
+      <button class="btn btn-primary" mat-button id="newUser" mat-dialog-close="false" (click)="closeDialog()">
+        Close
+    </button>
+      </span>
+            <span id="submit">
+       <button type="submit" class="btn btn-primary" id="newUser" [disabled]="!newUserForm.valid" (click)="submit()">
+        Submit
+    </button>
+  </span>
+        </div>
+    </mat-dialog-actions>
+</div>

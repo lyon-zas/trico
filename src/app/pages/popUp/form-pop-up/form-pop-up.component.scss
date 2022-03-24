@@ -15,7 +15,7 @@
 
 .buttons {
     margin-top: -20px;
-    margin-left: 390px;
+    margin-left: -3px;
 }
 
 label {
@@ -48,10 +48,38 @@ option {
 }
 
 #submit {
-    margin-left: 100px;
+    margin-left: 325px;
     margin-top: 15px
 }
 
+#todaysDate {
+    margin-left: -30px;
+}
+
+#submit {
+    margin-left: 400px;
+}
+
+#imageShow {
+    width: 200px;
+    height: 150px;
+    border-style: solid;
+    border-color: #f5f5f5;
+}
+
+#imageRow {
+    width: 400px;
+}
+
+#moveImage {
+    margin-top: -80px;
+    margin-left: 100px;
+}
+
+#imageMove {
+    margin-left: 200px;
+}
+
 // #fileUpload {
-//     margin-left: 150px;
+//     text-align: center;
 // }
