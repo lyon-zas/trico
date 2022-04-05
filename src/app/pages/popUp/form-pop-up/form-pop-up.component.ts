@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { HttpAPIsService } from 'src/app/RestAPI/http-apis.service';
 import { AccountStatus, User, UserRole } from 'src/app/userClass/user';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -38,7 +39,8 @@ export class FormPopUpComponent implements OnInit {
     private route: ActivatedRoute,
     private service: HttpAPIsService,
     private fb: FormBuilder,
-    private dialogRef: MatDialogRef<FormPopUpComponent>
+    private dialogRef: MatDialogRef<FormPopUpComponent>,
+    private http: HttpClient
     ) { }
 
     closeDialog(): void{
@@ -86,12 +88,19 @@ export class FormPopUpComponent implements OnInit {
     }
   }
 
+  // submit(){
+  //   this.user = this.newUserForm.getRawValue();
+  //   this.service.setUsersArray(this.user).subscribe((elem:any)=>{
+  //     console.log("Arrays>>", this.newUserForm.value, elem);
+  //     this.dialogRef.close();
+  //   })
+  // }
+
   submit(){
     this.user = this.newUserForm.getRawValue();
-    this.service.setUsersArray(this.user).subscribe((elem:any)=>{
-      console.log("Arrays>>", this.newUserForm.value, elem);
-      this.dialogRef.close();
-    })
+    this.http.post('https://tricomms-2fe5d-default-rtdb.firebaseio.com/users.json', this.newUserForm.value).subscribe((response:any)=>{
+      console.log("Response>>", response);
+    });
   }
 
   getPatchValue(){

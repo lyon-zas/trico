@@ -5,29 +5,102 @@
 
     <div class="container">
         <div class="card" id="card">
-            <div class="card" id="matTab">
-                <mat-tab-group>
-                    <mat-tab label="💬 &nbsp;Recent Chats">
-                        content1
-                    </mat-tab>
-                    <mat-tab label="📱 &nbsp; Contacts">
-                        <div id="contacts">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Search for Contact...">
-                            </div><br>
-                            <table class="table table-borderless" id="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="myTable">
+            <div class="row">
+                <div class="col">
+                    <div class="chats-page">
+                        <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" style="width: 520px;">
+                            <!-- <a class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+                                <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+                                <span class="fs-5 fw-semibold">Group chats</span>
+                                <input type="text" class="fa-5 fw-bold" [(ngModel)]="userName">
+                            </a> -->
+                            <div class="list-group list-group-flush border-bottom scrollarea">
+                                <a class="list-group-item list-group-item-action py-3 lh-tight" *ngFor="let msg of messages">
+                                    <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <!-- <strong class="mb-1">{{msg.userName}}</strong> -->
+                                        <!-- <small class="text-muted">Tues</small> -->
+                                    </div>
+                                    <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+                                </a>
 
-                                    <tr>
-                                        <th scope="row">
-                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.774 144.774" style="enable-background:new 0 0 144.774 144.774;" xml:space="preserve">
+                                <section class="msger">
+                                    <header class="msger-header">
+                                        <div class="msger-header-title">
+                                            <i class="fas fa-comment-alt"></i>
+                                            <span id="chats">Chats Page</span>
+                                        </div>
+                                        <div class="msger-header-options">
+                                            <span><i class="fas fa-cog"></i></span>
+                                        </div>
+                                    </header>
+
+                                    <main class="msger-chat">
+                                        <div class="msg left-msg">
+                                            <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"></div>
+
+                                            <div class="msg-bubble">
+                                                <div class="msg-info">
+                                                    <div class="msg-info-name">Nathan King</div>
+                                                    <div class="msg-info-time">12:45</div>
+                                                </div>
+
+                                                <div class="msg-text">
+                                                    Hi, welcome to SimpleChat! Go ahead and send me a message. 😄
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="msg right-msg">
+                                            <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)"></div>
+
+                                            <div class="msg-bubble">
+                                                <div class="msg-info">
+                                                    <div class="msg-info-name">Sajad</div>
+                                                    <div class="msg-info-time">12:46</div>
+                                                </div>
+
+                                                <div class="msg-text">
+                                                    You can change your name in JS section!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </main>
+
+                                    <form class="msger-inputarea">
+                                        <input type="text" class="msger-input" placeholder="Enter your message...">
+                                        <button type="submit" class="msger-send-btn">Send</button>
+                                    </form>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <form action="" (submit)="submit()">
+                        <input type="text" placeholder="start a chat here" class="form-control" [value]="message" id="msg" (change)="message = $event.target">
+                    </form> -->
+                </div>
+                <div class="col">
+                    <mat-tab-group>
+                        <mat-tab label="💬 &nbsp;Recent Chats">
+                            content1
+                        </mat-tab>
+                        <mat-tab label="📱 &nbsp; Contacts">
+                            <div id="contacts">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Search for Contact...">
+                                </div><br>
+                                <table class="table table-borderless" id="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="myTable">
+
+                                        <tr>
+                                            <th scope="row">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.774 144.774" style="enable-background:new 0 0 144.774 144.774;" xml:space="preserve">
 <g>
 	<ellipse style="fill:#FF6726;" cx="72.387" cy="72.388" rx="72.386" ry="72.386"/>
 	<g>
@@ -107,13 +180,13 @@
 </g>
 </svg>
 
-                                        </th>
-                                        <td colspan="2">Nathan King <br> <small>Writer</small></td>
-                                        <td><small id="online">online</small></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.773 144.773" style="enable-background:new 0 0 144.773 144.773;" xml:space="preserve">
+                                            </th>
+                                            <td colspan="2">Nathan King <br> <small>Writer</small></td>
+                                            <td><small id="online">online</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.773 144.773" style="enable-background:new 0 0 144.773 144.773;" xml:space="preserve">
 <g>
 	<circle style="fill:#F5C002;" cx="72.387" cy="72.386" r="72.386"/>
 	<g>
@@ -197,13 +270,13 @@
 </g>
 </svg>
 
-                                        </th>
-                                        <td colspan="2">Simmy Lee <br> <small>Sports Man</small></td>
-                                        <td><small id="offline">offline</small></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.773 144.773" style="enable-background:new 0 0 144.773 144.773;" xml:space="preserve">
+                                            </th>
+                                            <td colspan="2">Simmy Lee <br> <small>Sports Man</small></td>
+                                            <td><small id="offline">offline</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.773 144.773" style="enable-background:new 0 0 144.773 144.773;" xml:space="preserve">
 <g>
 	<circle style="fill:#A6D9EA;" cx="72.387" cy="72.386" r="72.386"/>
 	<g>
@@ -282,13 +355,13 @@
 </g>
 </svg>
 
-                                        </th>
-                                        <td colspan="2">Kennie Jnr<br> <small>Mathematician</small></td>
-                                        <td><small id="online">online</small></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.774 144.774" style="enable-background:new 0 0 144.774 144.774;" xml:space="preserve">
+                                            </th>
+                                            <td colspan="2">Kennie Jnr<br> <small>Mathematician</small></td>
+                                            <td><small id="online">online</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.774 144.774" style="enable-background:new 0 0 144.774 144.774;" xml:space="preserve">
 <g>
 <ellipse style="fill:#FF6726;" cx="72.387" cy="72.388" rx="72.386" ry="72.386"/>
 <g>
@@ -368,13 +441,13 @@
 </g>
 </svg>
 
-                                        </th>
-                                        <td colspan="2">Queen Heiley <br> <small>Writer</small></td>
-                                        <td><small id="online">online</small></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.773 144.773" style="enable-background:new 0 0 144.773 144.773;" xml:space="preserve">
+                                            </th>
+                                            <td colspan="2">Queen Heiley <br> <small>Writer</small></td>
+                                            <td><small id="online">online</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.773 144.773" style="enable-background:new 0 0 144.773 144.773;" xml:space="preserve">
 <g>
 <circle style="fill:#F5C002;" cx="72.387" cy="72.386" r="72.386"/>
 <g>
@@ -458,13 +531,13 @@
 </g>
 </svg>
 
-                                        </th>
-                                        <td colspan="2">John sims <br> <small>Teacher</small></td>
-                                        <td><small id="offline">offline</small></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.773 144.773" style="enable-background:new 0 0 144.773 144.773;" xml:space="preserve">
+                                            </th>
+                                            <td colspan="2">John sims <br> <small>Teacher</small></td>
+                                            <td><small id="offline">offline</small></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144.773 144.773" style="enable-background:new 0 0 144.773 144.773;" xml:space="preserve">
 <g>
 <circle style="fill:#A6D9EA;" cx="72.387" cy="72.386" r="72.386"/>
 <g>
@@ -543,18 +616,22 @@
 </g>
 </svg>
 
-                                        </th>
-                                        <td colspan="2">Helen smith<br> <small>Actor</small></td>
-                                        <td><small id="online">online</small></td>
-                                    </tr>
+                                            </th>
+                                            <td colspan="2">Helen smith<br> <small>Actor</small></td>
+                                            <td><small id="online">online</small></td>
+                                        </tr>
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </mat-tab>
-                    <mat-tab label="📡 &nbsp; Channels"> Content 3 </mat-tab>
-                </mat-tab-group>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="📡 &nbsp; Channels"> Content 3 </mat-tab>
+                    </mat-tab-group>
+
+                </div>
             </div>
+
+
         </div>
     </div>
 </div>

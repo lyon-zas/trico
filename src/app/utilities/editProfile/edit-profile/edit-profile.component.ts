@@ -5,6 +5,7 @@ import { HttpAPIsService } from 'src/app/RestAPI/http-apis.service';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { User } from 'src/app/userClass/user';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -28,7 +29,7 @@ export class EditProfileComponent implements OnInit {
   user: User = new User(this.userId, this.userName, this.webMail, this.firstName, this.lastName, this.accountStatus,this.userRole, this.password,this.confirmPassword, this.profilePicture, this.todayDate)
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private service: HttpAPIsService, private fb:FormBuilder) { }
+  constructor(private router: Router, private route: ActivatedRoute, private service: HttpAPIsService, private fb:FormBuilder, private http: HttpClient) { }
 
 
   newUserForm = this.fb.group({
@@ -44,12 +45,19 @@ export class EditProfileComponent implements OnInit {
   })
 
 
+  // submit(){
+  //   this.user = this.newUserForm.getRawValue();
+  //   this.service.setUsersArray(this.user).subscribe((elem:any)=>{
+  //     console.log("submitted Arrays>>", this.newUserForm.value, elem);
+  //     this.setLocalStorage();
+  //     alert('Account has been updated succesfully');
+  //   })
+  // }
+
   submit(){
     this.user = this.newUserForm.getRawValue();
-    this.service.setUsersArray(this.user).subscribe((elem:any)=>{
-      console.log("submitted Arrays>>", this.newUserForm.value, elem);
-      this.setLocalStorage();
-      alert('Account has been updated succesfully');
+    this.http.post('https://tricomms-2fe5d-default-rtdb.firebaseio.com/users.json', this.user).subscribe((response:any)=>{
+      console.log("reponseFromFireBase>>", this.newUserForm.value);
     })
   }
 

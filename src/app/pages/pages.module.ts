@@ -36,6 +36,8 @@ import { FilterPipe } from './filterPipe/filter.pipe';
 import { FormPopUpComponent } from './popUp/form-pop-up/form-pop-up.component';
 import { SelectPipe } from './boxFilter/select.pipe';
 import { Error404Component } from './error404/error404/error404.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const materialModules = [
   MatTabsModule,
@@ -82,7 +84,8 @@ const materialModules = [
     materialModules,
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     materialModules

@@ -5,6 +5,7 @@ import { HttpAPIsService } from 'src/app/RestAPI/http-apis.service';
 import { User } from 'src/app/userClass/user';
 import { MatDialog } from '@angular/material/dialog';
 import { FormPopUpComponent } from '../../popUp/form-pop-up/form-pop-up.component';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class ManageUsersComponent implements OnInit {
     private service: HttpAPIsService,
     private router: Router,
     private route: ActivatedRoute,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private http: HttpClient
     ) { }
 
 
@@ -52,12 +54,19 @@ export class ManageUsersComponent implements OnInit {
 
 
 
-   getUsers(){
-  this.service.getUsersArray().subscribe(tricomms =>{
-    this.users = tricomms;
-    console.log("New Table Arrays>>", this.users);
-  })
-   }
+  //  getUsers(){
+  // this.service.getUsersArray().subscribe(tricomms =>{
+  //   this.users = tricomms;
+  //   console.log("New Table Arrays>>", this.users);
+  // })
+  //  }
+
+   getFireBaseData(){
+     this.http.get<User[]>('https://tricomms-2fe5d-default-rtdb.firebaseio.com/users.json').subscribe((response:any)=>{
+       this.users = response;
+       console.log("firsBaseTable>>", this.users);
+     })
+  }
 
    editUser(user:User){
      this.service.setUserArray(user);
@@ -81,8 +90,9 @@ export class ManageUsersComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getUsers();
+    // this.getUsers();
     this.viewUsersProfile;
+    this.getFireBaseData();
   }
 
 }
